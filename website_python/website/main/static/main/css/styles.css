@@ -1,0 +1,191 @@
+.logotype {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.content-hero {
+  height: 90vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8))), url(../images/main-background.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.8)), url(../images/main-background.jpg) no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.content-hero a {
+  text-transform: uppercase;
+}
+
+.content-about {
+  padding: 45px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .content-about {
+    padding: 30px 0;
+  }
+}
+
+.content-about .about-title {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.content-about .about-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45px;
+  width: 150px;
+  height: 2px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.content-about img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-latest-courses .latest-courses-title {
+  position: relative;
+}
+
+.content-latest-courses .latest-courses-title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45px;
+  width: 150px;
+  height: 2px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.content-latest-courses .product {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.content-latest-courses .product:hover {
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.content-latest-courses .product .text {
+  position: relative;
+}
+
+.content-latest-courses .product .text h5 {
+  margin-bottom: 5px;
+}
+
+.content-latest-courses .product .text .price {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.content-latest-courses .product .text .pricing {
+  width: 50%;
+}
+
+.content-latest-courses .product .text .bottom-area {
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-latest-courses .product .text .bottom-area a {
+  text-decoration: none;
+}
+
+.content-latest-courses .product .text .bottom-area .add-to-cart, .content-latest-courses .product .text .bottom-area .see-more {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 300;
+  width: 115px;
+}
+
+.content-trainer-area {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 991px) {
+  .content-trainer-area {
+    padding-bottom: 40px;
+  }
+}
+
+.content-trainer-area__title {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.content-trainer-area__title:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45px;
+  width: 150px;
+  height: 2px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.single-trainer {
+  margin-bottom: 30px;
+}
+
+.single-trainer .thumb {
+  position: relative;
+}
+
+.single-trainer .meta-text {
+  background: #fff;
+  padding: 20px 25px;
+  -webkit-box-shadow: 0px 0px 30px rgba(153, 153, 153, 0.13);
+          box-shadow: 0px 0px 30px rgba(153, 153, 153, 0.13);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 991px) {
+  .single-trainer .meta-text {
+    padding: 20px 20px;
+  }
+}
+
+.single-trainer .meta-text h4 {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.single-trainer .meta-text .designation {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.single-trainer .meta-text a {
+  font-size: 14px;
+  margin: 0 10px;
+  color: #ccc;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.single-trainer .meta-text a:hover {
+  color: #000;
+}
+
+.single-trainer:hover .meta-text {
+  -webkit-box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+/*# sourceMappingURL=styles.css.map */
