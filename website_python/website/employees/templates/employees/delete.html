@@ -1,0 +1,41 @@
+<!-- include base pattern for page -->
+{% extends 'main/base.html' %}
+
+<!-- text to display in page header -->
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+<!-- code to display on page -->
+{% block content %}
+    <div class="container py-3">
+        <h1>Are you sure to delete record?</h1>
+        <div class="table-responsive">
+            <table class="table table-hover mt-2">
+                <thead class="table-dark">
+                    <tr class="col">
+                        <th>ID</th>
+                        <th>Surname</th>
+                        <th>Name</th>
+                        <th>Middlename</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ employee.id }}</td>
+                        <td>{{ employee.surname }}</td>
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.middlename }}</td>
+                        <td>{{ employee.position }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <a href="{% url 'employees:index' %}" class="btn btn-primary">Return</a>
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
+{% endblock %}
