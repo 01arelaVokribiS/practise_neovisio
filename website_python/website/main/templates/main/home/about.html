@@ -1,0 +1,35 @@
+<!-- include base pattern for page -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- text to display in page header -->
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+<!-- code to display on page -->
+{% block content %}
+    <div class="content-about">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="about-title">About</h2>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="text-center">Start your journey to a better life with our courses</h2>
+                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
+                    <p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed.</p>
+                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat cauctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per Mauris in erat justo.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo tempora obcaecati asperiores laborum repudiandae. A quaerat sint architecto sed temporibus magnam non vel sunt, doloribus eaque qui quas vitae totam!
+                    Illo repellendus vel libero aut iste et quas nobis nostrum porro fuga error necessitatibus voluptate sed, ullam quos perspiciatis facilis molestias cumque nihil eligendi cum sequi debitis illum perferendis.</p>
+                    <p>Harum fugit, iusto cupiditate molestiae consequuntur repellendus temporibus animi. Provident, ratione dolorem eum libero quis eius voluptas nulla, rem autem similique beatae quas amet nihil voluptates minima dolores fugiat perspiciatis.</p>
+                    <p>Officiis pariatur quis harum, facilis quisquam culpa voluptatum perspiciatis sunt optio tempora soluta eveniet natus libero voluptas exercitationem temporibus recusandae cum inventore qui illum cupiditate ab! Qui itaque praesentium explicabo.</p>
+                    <p>Totam nisi eos harum sed ad minus soluta quibusdam consequatur, vel tempora aliquid rem nihil quo quas magnam consectetur deleniti porro voluptatem! Accusantium velit ex dolorem rerum laboriosam quod pariatur?</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'main/images/about-background.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

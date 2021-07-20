@@ -1,0 +1,47 @@
+<!-- include base pattern for page -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- text to display in page header -->
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+<!-- code to display on page -->
+{% block content %}
+    <div class="container py-3">
+        <h1>{{ title }}</h1>
+        <div class="row">
+            {% if courses %}
+                {% for course in courses %}
+                    <div class="col-sm-12 col-md-4 mb-sm-2">
+                        <div class="bg-light product">
+                            <div class="text py-3 px-3">
+                                    <div class="d-flex">
+                                        <h4>{{ course.name }}</h4>
+                                    </div>
+                                    <p>{{ course.description }}</p>
+                                    <div class="pricing">
+                                        <p class="price">{{ course.price }}$</p>
+                                        <p>{{ course.category }}</p>
+                                    </div>
+                                <hr>
+                                <div class="bottom-area">
+                                    <form action="{% url 'cart:cart_add' course.id %}" method="POST" class="d-flex ">
+                                        {% csrf_token %}
+                                        <div class="w-50">
+                                            {{ cart_product_form }}
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-dark text-uppercase ms-2">Add to cart</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No courses available</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
