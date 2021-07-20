@@ -1,0 +1,82 @@
+<!-- include base pattern for page -->
+{% extends 'main/base.html' %}
+
+<!-- text to display in page header -->
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+<!-- main content on page -->
+{% block content %}
+    <div class="container py-3">
+        <div class="table-responsive">
+            <table class="table table-hover mb-5 mt-3">
+                <thead class="table-dark">
+                    <tr class="col">
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price per unit</th>
+                        <th>Available</th>
+                        <th>Category</th>
+                        <th>Operations</th>
+                        <th>Total price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart %}
+                        {% with course=item.course %}
+                            <tr>
+                                <td>{{ course.name }}</td>
+                                <td>{{ course.description }}</td>
+                                <td>{{ course.price }}</td>
+                                <td>{{ course.available }}</td>
+                                <td>{{ course.category }}</td>
+                                <td>
+                                    <form action="{% url 'cart:cart_add' course.id %}" method="POST" class="d-flex flex-column">
+                                        {% csrf_token %}
+                                        {{ item.update_quantity_form.quantity }}
+                                        {{ item.update_quantity_form.update }}  
+                                        <button type="submit" class="btn btn-primary my-1">Submit</button>
+                                        <a href="{% url 'cart:cart_remove' course.id %}" class="btn btn-danger">Delete</a>
+                                    </form>
+                                </td>
+                                <td>
+                                    {{ item.total_price }}
+                                </td>
+                            </tr>
+                        {% endwith %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex justify-content-end">
+            <table class="table table-hover w-25">
+                <thead>
+                    <tr>
+                        <th>Total items</th>
+                        <th>Total price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% with total_items=cart|length %}
+                        {% if cart|length > 0 %}
+                            <tr>
+                                <td>{{ total_items }}</td>
+                                <td>{{ cart.get_total_price }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        {% endif %}
+                    {% endwith %}
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a href="{% url 'main:courses' %}" class="btn btn-primary">Return</a>
+            <a href="#" class="btn btn-primary">Submit</a>
+        </div>
+    </div>
+{% endblock %}
